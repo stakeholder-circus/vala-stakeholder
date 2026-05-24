@@ -1,14 +1,12 @@
 # Toolchain
 
-This repository is scaffold-only for the Vala HorizonLanguage target. It contains baseline coordination files only. No deterministic runtime validation is claimed.
+Vala native validation uses Homebrew `vala` and GLib on arm64 macOS.
 
-## Horizon target
+## Proven commands
 
-- Language id: vala
-- Display name: Vala
-- Horizon status: future-wave
-- Target class: parity-target
-- Repository: vala-stakeholder
-## Scaffold scope
+- `valac --version`
+- `valac --pkg glib-2.0 -o bin/stakeholder src/stakeholder.vala`
+- `make compiler-proof`
+- `make test`
 
-Toolchain status: scaffold-only. No compiler, interpreter, formatter, package manager, test runner, or deterministic runtime validation has been selected or proven.
+Toolchain source: Homebrew bottled `vala` 0.56.19 with GLib and formula transitive dependencies. Docker, Nix, and Vala package managers are not required for the current deterministic first tranche.

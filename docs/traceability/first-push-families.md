@@ -1,14 +1,13 @@
 # First push families
 
-This repository is scaffold-only for the Vala HorizonLanguage target. It contains baseline coordination files only. No deterministic runtime validation is claimed.
+This local tranche ports the deterministic family-focus contract into a compiled Vala/GLib runtime.
 
-## Horizon target
+| Family group | Vala path | Source reference | Parity class |
+| --- | --- | --- | --- |
+| classic-six | `src/stakeholder.vala` | current deterministic CLI family registry and smoke-contract shape | dedicated |
+| modern-core | `src/stakeholder.vala` | current deterministic CLI family registry and smoke-contract shape | dedicated |
+| later families | `src/stakeholder.vala` | grouped fallback policy in current deterministic repos | grouped fallback |
+| CLI contract | `src/stakeholder.vala`, `tests/test_cli.sh` | small-tranche smoke contract | deterministic |
+| experimental provider | `src/stakeholder.vala`, `tests/test_cli.sh` | fail-fast provider policy in current deterministic repos | explicit fail-fast |
 
-- Language id: vala
-- Display name: Vala
-- Horizon status: future-wave
-- Target class: parity-target
-- Repository: vala-stakeholder
-## Scaffold scope
-
-Traceability status: scaffold-only. First-push family ownership, source audit rows, fixture requirements, and deterministic validation evidence must be supplied before implementation claims.
+Rust and Java remain canonical behavioral anchors; this Vala tranche is local-only and native-validated.
