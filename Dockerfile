@@ -5,7 +5,8 @@ RUN apt-get update \
 WORKDIR /src
 COPY src/stakeholder.vala src/stakeholder.vala
 COPY tests/test_cli.sh tests/test_cli.sh
-RUN valac --fatal-warnings --pkg glib-2.0 -o /out/stakeholder src/stakeholder.vala \
+RUN mkdir -p /out \
+    && valac --fatal-warnings --pkg glib-2.0 -o /out/stakeholder src/stakeholder.vala \
     && BIN=/out/stakeholder tests/test_cli.sh
 FROM ubuntu:24.04
 RUN apt-get update \
