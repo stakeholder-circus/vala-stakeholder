@@ -1,6 +1,6 @@
 FROM ubuntu:24.04 AS build
 RUN apt-get update \
-    && apt-get install --yes --no-install-recommends valac libglib2.0-dev \
+    && apt-get install --yes --no-install-recommends build-essential valac libglib2.0-dev \
     && find /var/lib/apt/lists -mindepth 1 -delete
 WORKDIR /src
 COPY src/stakeholder.vala src/stakeholder.vala
