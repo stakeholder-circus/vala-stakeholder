@@ -1,23 +1,25 @@
-> [!WARNING]
-> This repository is AI-assisted and manually reviewed. It is local-only in the resource-safe small deterministic tranche.
+> [!NOTE]
+> This repository is AI-assisted and manually reviewed. Copyright may subsist only in human-authored portions to the extent applicable.
 
 # vala-stakeholder
 
-Vala implementation of the stakeholder deterministic first tranche using GLib.
+Compiled Vala/GLib implementation of the stakeholder deterministic first tranche.
 
-## Current tranche
+## Implemented
 
-- Full dedicated `classic-six + modern-core` generator families.
+- Full dedicated classic-six + modern-core generator families.
 - Grouped fallback for later generator families.
 - Deterministic normalized JSON with same-seed stability.
-- `--list-values`, `--focus-family`, `--output-format`, `--seed`, and explicit `--experimental-provider` fail-fast.
-- Full live-provider/runtime support remains deferred to the later provider wave.
+- CLI support for list-values, focus-family, output-format, and seed.
+- Explicit experimental-provider fail-fast.
 
-## Commands
+## Validation
 
-- `python3 scripts/validate_scaffold.py`
-- `make compiler-proof`
-- `make test`
-- `make build && bin/stakeholder --list-values`
+- python3 scripts/validate_scaffold.py
+- make compiler-proof
+- make analyze
+- make test
+- docker build -t vala-stakeholder .
+- docker run --rm vala-stakeholder --list-values
 
-Docker is intentionally not used in this M1-safe pass; native Vala plus GLib is the validation lane.
+GitHub CI is authoritative for Ubuntu native, Docker, fatal-warning SAST, dependency review, actionlint, and workflow-security gates.
