@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS build
+FROM ubuntu:25.10 AS build
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends build-essential valac libglib2.0-dev \
     && find /var/lib/apt/lists -mindepth 1 -delete
@@ -8,7 +8,7 @@ COPY tests/test_cli.sh tests/test_cli.sh
 RUN mkdir -p /out \
     && valac --fatal-warnings --pkg glib-2.0 -o /out/stakeholder src/stakeholder.vala \
     && BIN=/out/stakeholder tests/test_cli.sh
-FROM ubuntu:24.04
+FROM ubuntu:25.10
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends libglib2.0-0t64 \
     && find /var/lib/apt/lists -mindepth 1 -delete \
